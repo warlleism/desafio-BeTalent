@@ -1,0 +1,45 @@
+.container-input {
+    width: 100%;
+    border: 1px solid #c0c0c0;
+    border-radius: 100px;
+    height: 30px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.search-icon {
+    background-color: #2e2e2e;
+    width: 5%;
+    border-right: 1px solid #7a7a7a;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 664px) {
+        width: 10%;
+    }
+
+    @media (max-width: 266px) {
+        width: 20%;
+    }
+}
+
+.input {
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 95%;
+
+    @media (max-width: 664px) {
+        width: 90%;
+    }
+
+    @media (max-width: 266px) {
+        width: 80%;
+    }
+}
