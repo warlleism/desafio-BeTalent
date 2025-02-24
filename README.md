@@ -1,7 +1,8 @@
 ## Startar (Rodar projeto)
 
 Para instalar as depedências `npm install`.
-Para startar o projeto, basta executar o comando `npm run dev`. Isso vai startar tanto o FRONT-END Qquanto o BACK-END.
+
+Para startar o projeto, basta executar o comando `npm run dev`. Isso vai startar tanto o FRONT-END quanto o BACK-END.
 
 # Desafio Front-end
 
