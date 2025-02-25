@@ -38,7 +38,6 @@ export default function FilterComponent({ employees, setFilter }: { employees: E
     }
 
     const handleCheckboxChange = (name: string) => {
-        setText("");
         setSearch(prevSearch =>
             prevSearch.includes(name)
                 ? prevSearch.filter(s => s !== name)
@@ -48,13 +47,13 @@ export default function FilterComponent({ employees, setFilter }: { employees: E
 
     useEffect(() => {
         filterEmployees()
-    }, [text])
+    }, [text, search])
 
     return (
         <div>
             <div className="container-input">
-                <div className="search-icon"> <FaSearch color="#fff" size={17} /></div>
-                <input placeholder={showSearch ? "Ex: Nome, Cargo, Telefone" : "Buscar por nome"} value={text} defaultValue={text} className="input" type="text" onChange={e => setText(e.target.value)} />
+                <div className="search-icon" onClick={() => filterEmployees()} style={{ cursor: "pointer" }}> <FaSearch color="#fff" size={17} /></div>
+                <input placeholder={showSearch ? "Ex: Nome, Cargo, Telefone, Data de Admissão" : "Buscar por nome"} value={text} defaultValue={text} className="input" type="text" onChange={e => setText(e.target.value)} />
             </div>
             <div >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -79,20 +78,28 @@ export default function FilterComponent({ employees, setFilter }: { employees: E
                     <div className="container-search">
                         <div className="container-checkbox">
                             <FormControlLabel
-                                control={<Checkbox name="name" onChange={(e) => handleCheckboxChange(e.target.name)} />}
+                                control={<Checkbox name="name" onChange={(e) => handleCheckboxChange(e.target.name)} sx={{ color: "#000" }} />}
                                 label="Nome"
+                                labelPlacement="end"
+                                sx={{ color: "#2d2d2d" }}
                             />
                             <FormControlLabel
-                                control={<Checkbox name="job" onChange={(e) => handleCheckboxChange(e.target.name)} />}
+                                control={<Checkbox name="job" onChange={(e) => handleCheckboxChange(e.target.name)} sx={{ color: "#000" }} />}
                                 label="Cargo"
+                                labelPlacement="end"
+                                sx={{ color: "#2d2d2d" }}
                             />
                             <FormControlLabel
-                                control={<Checkbox name="admission_date" onChange={(e) => handleCheckboxChange(e.target.name)} />}
+                                control={<Checkbox name="admission_date" onChange={(e) => handleCheckboxChange(e.target.name)} sx={{ color: "#000" }} />}
                                 label="Data de Admissão"
+                                labelPlacement="end"
+                                sx={{ color: "#2d2d2d" }}
                             />
                             <FormControlLabel
-                                control={<Checkbox name="phone" onChange={(e) => handleCheckboxChange(e.target.name)} />}
+                                control={<Checkbox name="phone" onChange={(e) => handleCheckboxChange(e.target.name)} sx={{ color: "#000" }} />}
                                 label="Telefone"
+                                labelPlacement="end"
+                                sx={{ color: "#2d2d2d" }}
                             />
                         </div>
                     </div>
