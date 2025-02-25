@@ -54,7 +54,7 @@ export default function FilterComponent({ employees, setFilter }: { employees: E
         <div>
             <div className="container-input">
                 <div className="search-icon"> <FaSearch color="#fff" size={17} /></div>
-                <input placeholder={showSearch ? "Buscar por nome, cargo, telefone ou data de admissão" : "Buscar por nome"} value={text} defaultValue={text} className="input" type="text" onChange={e => setText(e.target.value)} />
+                <input placeholder={showSearch ? "Ex: Nome, Cargo, Telefone" : "Buscar por nome"} value={text} defaultValue={text} className="input" type="text" onChange={e => setText(e.target.value)} />
             </div>
             <div >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
