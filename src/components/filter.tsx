@@ -1,15 +1,9 @@
 import { Employee } from "../@types/types";
 import { FaSearch } from "react-icons/fa";
-import { IoFilter } from "react-icons/io5";
-import { IoMdClose } from "react-icons/io";
 import "./style.css"
-import { useState } from "react";
-import { Checkbox, FormControlLabel } from "@mui/material";
 
 export default function FilterComponent({ employees, setFilter }: { employees: Employee[], setFilter: React.Dispatch<React.SetStateAction<Employee[]>> }) {
 
-    const [showSearch, setShowSearch] = useState<boolean>(false);
-    const [search, setSearch] = useState<string[]>([]);
     const filterEmployees = (text: string) => {
         const filtered = employees.filter(employee => {
             return text.split(',').every(t => {
@@ -31,8 +25,6 @@ export default function FilterComponent({ employees, setFilter }: { employees: E
         });
         setFilter(filtered);
     }
-
-    console.log(search)
 
     return (
         <div>
